@@ -1,0 +1,76 @@
+class Fraction{
+
+private:
+    int numerator;
+    int denominator;
+public:
+   Fraction(int numerator, int denominator){
+   this->numerator=numerator;
+   this->denominator=denominator;
+   }
+
+ void print() const{
+ cout<<this->numerator<<"/"<<this->denominator<<endl;
+ }
+
+ void simplify(){
+ int gcd=1;
+ int j=min(this->numerator,this-> denominator);
+ for(int i=1;i<=j;i++){
+    if(this->numerator%i==0&&this->denominator%i==0){
+             gcd=i;
+        }
+ }
+this->numerator=this->numerator/gcd;
+this->denominator=this->denominator/gcd;
+ }
+Fraction add(Fraction const &f2) const{                 // need to change the return type because I wanted to store the result in the new object;
+ int lcm=denominator*f2.denominator;
+ int x=lcm/denominator;
+ int y=lcm/f2.denominator;
+ int numtr=x*numerator+(y*f2.numerator);
+
+ //numerator=numtr;
+ //denominator=lcm;          now we don't have to store it into f1 so this step is not true;
+
+ Fraction fNew(numtr,lcm);     // we want result in third one so make the new one; and return it;
+ fNew.simplify();
+ return fNew;
+
+
+ }
+ // we can do same thing in quite different way by using operator overloading;
+
+ Fraction operator+(Fraction const &f2)const{             // only change is operator overloading
+ int lcm=denominator*f2.denominator;
+ int x=lcm/denominator;
+ int y=lcm/f2.denominator;
+ int numtr=x*numerator+(y*f2.numerator);
+
+ Fraction fNew(numtr,lcm);
+ fNew.simplify();
+ return fNew;
+
+
+ }
+ Fraction operator*(Fraction const &f2)const{
+ int num=numerator*f2.numerator;
+ int deno=denominator*f2.denominator;
+ Fraction fNew(num,deno);
+ fNew.simplify();
+ return fNew;
+ }
+
+
+ void multiply(Fraction const &f2){
+ numerator=numerator*f2.numerator;
+ denominator=denominator*f2.denominator;
+ simplify();
+ }
+ //checking operator
+
+ bool operator==(Fraction const&f2) const{
+ return (numerator==f2.numerator&&denominator==f2.denominator);   // it will only gives true or false;
+ }
+ };
+// we can make this operators constant because they are  not changing anything but using their values
