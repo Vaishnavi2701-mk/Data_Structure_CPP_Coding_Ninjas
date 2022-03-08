@@ -1,5 +1,4 @@
 /* Sum of Array
-Send Feedback
 Given an array of length N, you need to find and return the sum of all elements of the array.
 Do this recursively.
 Input Format :
