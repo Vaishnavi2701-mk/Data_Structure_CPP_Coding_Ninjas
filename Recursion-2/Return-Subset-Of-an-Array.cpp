@@ -38,7 +38,7 @@ For eg. Input : {1, 2}, then output should contain
 	{1, 1},		// Length of this subset is also 1
 	{2, 1, 2}}	// Length of this subset is 2
 
-Don’t print the subsets, just save them in output.
+Donâ€™t print the subsets, just save them in output.
 */
 
 int subset(int input[],int n,int output[][20]){
