@@ -1,5 +1,6 @@
-/* Return subsets sum to K
-Send Feedback
+/* 
+Return subsets sum to K
+
 Given an array A of size n and an integer K, return all subsets of A which sum to K.
 Subsets are of length varying from 0 to n, that contain elements of the array. But the order of elements should remain same as in the input array.
 Note : The order of subsets are not important.
@@ -33,7 +34,7 @@ For eg. Input : {1, 3, 4, 2} and K = 5, then output array should contain
 	{{2, 1, 4},	// Length of this subset is 2
 	{2, 3, 2}}	// Length of this subset is 2
 
-Don’t print the subsets, just save them in output.
+Donâ€™t print the subsets, just save them in output.
 */
 
 int subsetSumToK(int input[], int n, int output[][50], int k) {
