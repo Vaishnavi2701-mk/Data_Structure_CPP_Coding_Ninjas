@@ -1,10 +1,10 @@
 /* Print Permutations
-Send Feedback
+
 Given an input string (STR), print all possible permutations of the input string.
 Note:
 
 The input string may contain the same characters, so there will also be the same permutations.
-The order of permutations doesn’t matter.
+The order of permutations doesnâ€™t matter.
 
 Input Format:
 
